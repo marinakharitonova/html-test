@@ -2,7 +2,7 @@
 
 {% macro counter(props) %}
 	<div class="counter{% if props.className %} {{ props.className }}{% endif %}">
-		<button class="counter__button">
+		<button class="counter__button counter__button_subtract">
 			{{ icon({
 				iconName: 'subtract',
 				className: 'icon',
@@ -10,7 +10,7 @@
 			}) }}
 		</button>
 		<input type="number" readonly value="1" class="counter__input">
-		<button class="counter__button">
+		<button class="counter__button counter__button_add">
 			{{ icon({
 				iconName: 'add',
 				className: 'icon',

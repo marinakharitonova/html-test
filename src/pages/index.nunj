@@ -147,13 +147,13 @@
 				<div class="main__right-item">
 					<div class="main__cart-total">
 						<p>Subtotal</p>
-						<p>$1 050</p>
+						<p>$<span id="subtotal">1 050</span></p>
 						<p>Tax</p>
 						<p>$100</p>
 						<p>Shipping</p>
 						<p>$150</p>
 						<p>Total</p>
-						<p>$1 300</p>
+						<p>$<span id="total">1 300</span></p>
 					</div>
 				</div>
 			</div>

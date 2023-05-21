@@ -13,7 +13,7 @@
 			</p>
 			<div class="cart-item__info">
 				{{ counter() }}
-				<p>$ {{ props.price }}</p>
+				<p>$ <span class="cart-item__price">{{ props.price }}</span></p>
 			</div>
 		</div>
 		<button class="cart-item__close">
