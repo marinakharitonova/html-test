@@ -16,6 +16,9 @@ class CartCalculator {
 		this.shipping = 150;
 		this.total = 0;
 
+		this.init();
+	}
+	init() {
 		this.cartList = document.querySelector('.main__cart-list');
 		this.totalElement = document.getElementById('total');
 		this.subtotalElement = document.getElementById('subtotal');
@@ -97,6 +100,7 @@ class ProjectApp {
 			document.documentElement.classList.remove('_loading');
 
 			const cartCalculator = new CartCalculator();
+			cartCalculator.init();
 		});
 	}
 }
