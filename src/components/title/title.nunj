@@ -1,0 +1,3 @@
+{% macro title(props) %}
+	<h2 class="title{% if props.className %} {{ props.className }}{% endif %}">{{ props.children }}</h2>
+{% endmacro %}

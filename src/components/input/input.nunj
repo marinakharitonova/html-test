@@ -1,0 +1,12 @@
+{% macro input(props) %}
+	<div class="input{% if props.className %} {{ props.className }}{% endif %}">
+		{% if props.label %}
+			<label for="{{ props.id }}" class="input__label">{{ props.label }}</label>
+		{% endif %}
+		<input id="{{ props.id }}"
+			   type="{{ props.type }}"
+			   placeholder="{% if props.placeholder %} {{ props.placeholder }}{% endif %}"
+			   class="input__field"
+		>
+	</div>
+{% endmacro %}

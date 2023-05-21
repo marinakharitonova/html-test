@@ -22,5 +22,27 @@
 			"title": "Item 2",
 			"text": "Desc 2"
 		}
+	],
+	"orderSteps": [
+		{
+			"name": "Account",
+			"path": "#",
+			"index": 1
+		},
+		{
+			"name": "Shipping",
+			"path": "#",
+			"index": 2
+		},
+		{
+			"name": "Billing",
+			"path": "#",
+			"index": 3
+		},
+		{
+			"name": "Review",
+			"path": "#",
+			"index": 4
+		}
 	]
 }

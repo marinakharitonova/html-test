@@ -1,0 +1,62 @@
+{% from "../../components/input/input.nunj" import input %}
+{% from "../../components/icon/icon.nunj" import icon %}
+
+<div class="card-info">
+	{{ input({
+		id: 'card-name',
+		label: 'Name on card',
+		className: '',
+		type: 'text',
+		placeholder: 'Placeholder Text'
+	}) }}
+
+
+	<div class="card-info__number">
+		{{ input({
+			id: 'card-number-1',
+			label: 'Card number',
+			className: '',
+			type: 'number',
+			placeholder: ''
+		}) }}
+		{{ input({
+			id: 'card-number-2',
+			label: '',
+			className: '',
+			type: 'number',
+			placeholder: ''
+		}) }}
+		{{ input({
+			id: 'card-number-3',
+			label: '',
+			className: '',
+			type: 'number',
+			placeholder: ''
+		}) }}
+		{{ input({
+			id: 'card-number-4',
+			label: '',
+			className: '',
+			type: 'number',
+			placeholder: ''
+		}) }}
+	</div>
+
+	<div class="card-info__other">
+		{{ input({
+			id: 'expire-date',
+			label: 'Expire date',
+			className: '',
+			type: 'number',
+			placeholder: ''
+		}) }}
+		{{ input({
+			id: 'cvv',
+			label: 'CVV code' + icon({iconName: 'question',className: 'icon',attr: 'viewBox="0 0 13 15" style="width: 13; height: 15;"'}),
+			className: 'card-info__cvv-input',
+			type: 'number',
+			placeholder: ''
+		}) }}
+
+	</div>
+</div>

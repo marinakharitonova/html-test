@@ -1,0 +1,19 @@
+{% from "../label/label.nunj" import label %}
+
+{% macro steps(props) %}
+	<div class="steps{% if props.className %} {{ props.className }}{% endif %}">
+		{% for step in orderSteps %}
+			<a href="{{ step.path }}"
+			   class="steps__item{% if props.activeIndex + 1 <= step.index %} steps__item_disabled{% endif %}{% if props.activeIndex === step.index %} steps__item_active{% endif %}">
+				{{ label({
+					className: '',
+					children: step.index
+				}) }}
+				<span class="steps__item-name">{{ step.name }}</span>
+			</a>
+			{% if loop.index < loop.length %}
+				<hr class="steps__hr{% if props.activeIndex <= step.index %} steps__hr_disabled{% endif %}">
+			{% endif %}
+		{% endfor %}
+	</div>
+{% endmacro %}

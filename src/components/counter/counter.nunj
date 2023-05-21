@@ -1,0 +1,22 @@
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro counter(props) %}
+	<div class="counter{% if props.className %} {{ props.className }}{% endif %}">
+		<button class="counter__button">
+			{{ icon({
+				iconName: 'subtract',
+				className: 'icon',
+				attr: 'viewBox="0 0 20 20" style="width: 20px; height: 20px;"'
+			}) }}
+		</button>
+		<input type="number" readonly value="1" class="counter__input">
+		<button class="counter__button">
+			{{ icon({
+				iconName: 'add',
+				className: 'icon',
+				attr: 'viewBox="0 0 20 20" style="width: 20px; height: 20px;"'
+			}) }}
+		</button>
+	</div>
+
+{% endmacro %}

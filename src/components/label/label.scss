@@ -1,0 +1,21 @@
+.label {
+	width: 18px;
+	height: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: $primary-color;
+	color: $white-color;
+	border-radius: 50%;
+	font-size: 10px;
+	line-height: 15px;
+	font-weight: 500;
+}
+
+.label__small {
+	width: 13px;
+	height: 13px;
+	font-size: 10px;
+	line-height: 12px;
+	font-weight: 400;
+}

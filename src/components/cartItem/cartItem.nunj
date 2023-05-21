@@ -1,0 +1,27 @@
+{% from "../counter/counter.nunj" import counter %}
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro cartItem(props) %}
+	<div class="cart-item{% if props.className %} {{ props.className }}{% endif %}">
+		<img src="assets/images/{{ props.src }}.png"
+			 srcset="assets/images/{{ props.src }}@2x.png 2x"
+			 alt="{{ props.alt }}"
+			 class="cart-item__img" />
+		<div>
+			<p class="cart-item__name">
+				{{ props.name }}
+			</p>
+			<div class="cart-item__info">
+				{{ counter() }}
+				<p>$ {{ props.price }}</p>
+			</div>
+		</div>
+		<button class="cart-item__close">
+			{{ icon({
+				iconName: 'close',
+				className: 'icon',
+				attr: 'viewBox="0 0 18 18" style="width: 18px; height: 18px;"'
+			}) }}
+		</button>
+	</div>
+{% endmacro %}

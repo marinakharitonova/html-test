@@ -1,0 +1,25 @@
+.input {
+	&__label {
+		display: block;
+		color: $grey3-color;
+		font-size: 12px;
+		line-height: 24px;
+		font-weight: 500;
+	}
+
+	&__field {
+		width: 100%;
+		border-radius: 3px;
+		background: $grey1-color;
+		padding: 8px 10px;
+		font-size: 14px;
+		line-height: 24px;
+		outline: none;
+		border: none;
+		font-family: inherit;
+
+		&::placeholder {
+			color: $grey2-color;
+		}
+	}
+}

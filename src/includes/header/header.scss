@@ -1,4 +1,39 @@
 .header {
-	padding: 20px 0;
-	background: #ccc;
+	padding: 26px 0 23px;
+	border-bottom: 1px solid $secondary-color;
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__left {
+		display: grid;
+		grid-template-columns: auto auto;
+		align-items: center;
+		grid-gap: 26px;
+
+		@media (max-width: $breakpoint-md) {
+			grid-template-columns: auto auto auto;
+		}
+	}
+
+	&__chart {
+		position: relative;
+	}
+
+	&__chart-label {
+		position: absolute;
+		top: -6px;
+		right: -6px;
+	}
+
+	&__burger {
+		display: none;
+
+		@media (max-width: $breakpoint-md) {
+			display: block;
+		}
+	}
 }

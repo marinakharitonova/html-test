@@ -1,0 +1,3 @@
+{% macro label(props) %}
+	<span class="label{% if props.className %} {{ props.className }}{% endif %}">{{ props.children }}</span>
+{% endmacro %}

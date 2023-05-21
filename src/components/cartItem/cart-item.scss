@@ -1,0 +1,25 @@
+.cart-item {
+	display: flex;
+	align-items: flex-start;
+
+	&__img {
+		margin-right: 12px;
+	}
+
+	&__close {
+		margin-left: auto;
+	}
+
+	&__name {
+		max-width: 180px;
+		margin-bottom: 15px;
+	}
+
+	&__info {
+		display: grid;
+		grid-template-columns: auto auto;
+		align-items: center;
+		justify-content: flex-start;
+		grid-gap: 25px;
+	}
+}

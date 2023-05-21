@@ -1,0 +1,49 @@
+.card-info {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 20px;
+	border: 1px solid $secondary-color;
+	box-shadow: $shadow;
+	border-radius: 5px;
+	padding: 20px 30px 46px;
+
+	@media (max-width: $breakpoint-xs) {
+		border: none;
+		box-shadow: none;
+		padding: 0;
+	}
+
+	&__number,
+	&__other {
+		display: grid;
+		grid-gap: 30px;
+
+		@media (max-width: $breakpoint-xs) {
+			grid-gap: 5px;
+		}
+	}
+
+	&__number {
+		grid-template-columns: repeat(4, 1fr);
+		align-items: flex-end;
+	}
+
+	&__other {
+		width: calc(50% - 15px);
+		grid-template-columns: repeat(2, 1fr);
+
+		@media (max-width: $breakpoint-xs) {
+			width: calc(50% - 2.5px);
+		}
+	}
+
+	&__cvv-input {
+		.input__label {
+			display: grid;
+			grid-template-columns: auto auto;
+			align-items: center;
+			justify-content: flex-start;
+			grid-gap: 5px;
+		}
+	}
+}

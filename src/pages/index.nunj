@@ -2,71 +2,162 @@
 
 {% from "../components/button/button.nunj" import button %}
 {% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/steps/steps.nunj" import steps %}
+{% from "../components/title/title.nunj" import title %}
+{% from "../components/input/input.nunj" import input %}
+{% from "../components/radio/radio.nunj" import radio %}
+{% from "../components/checkbox/checkbox.nunj" import checkbox %}
+{% from "../components/counter/counter.nunj" import counter %}
+{% from "../components/cartItem/cartItem.nunj" import cartItem %}
+{% from "../components/input/input.nunj" import input %}
 
 {# Пример расширения существующего блока #}
 {# Например можно использовать для добавления уникальных тайтлов для каждой страницы #}
-{# {% block title %}Home / {{ super() }}{% endblock title %} #}
+{% block title %}HTML-test / {{ super() }}{% endblock title %}
 
 {% block content %}
 
 	{% include '../includes/header/header.nunj' %}
 
+
 	<div class="container">
 
-		<div style="padding:20px 0;">
-			{{ button({
-				className: '',
-				children: 'Buy something',
-				chevronRight: true
-			}) }}
-		</div>
+		<div class="main__content">
 
-		<div style="padding:20px 0;">
+			<div class="main__left">
+				{{ steps({
+					className: 'main__steps',
+					activeIndex: 3
+				}) }}
 
-			<h2 style="margin-bottom: 15px;">Пример использования циклов и функции range():</h2>
+				<form class="main__form">
+					{{ title({
+						className: 'main__left-title',
+						children: 'Billing Information'
+					}) }}
 
-			<div class="row">
-				{% for i in range(1, 13)  %}
-					<span>{{ i }}</span>
-				{% endfor %}
+					<div class="main__form-radio">
+						{{ radio({
+							className: '',
+							id: 'credit-card',
+							name: 'payment-type',
+							value: 'credit-card',
+							label: 'Pay with Credit Card',
+							checked: true
+						}) }}
+						{{ radio({
+							className: '',
+							id: 'pay-pal',
+							name: 'payment-type',
+							value: 'pay-pal',
+							label: icon({
+								iconName: 'paypal',
+								className: 'icon',
+								attr: 'viewBox="0 0 85 23" style="width: 85px; height: 23px;"'
+							})
+						}) }}
+					</div>
+
+					{% include '../includes/card-info/card-info.nunj' %}
+
+					<div class="main__form-checkboxes">
+						{{ checkbox({
+							className: '',
+							id: 'save-card',
+							name: '',
+							value: '',
+							label: '<p>Save information of this credit card</p>',
+							checked: true
+						}) }}
+						{{ checkbox({
+							className: '',
+							id: 'privacy-policy',
+							name: '',
+							value: '',
+							label: '<p>I accept the&nbsp;<a href="#">terms and&nbsp;comditions</a> and&nbsp;the&nbsp;<a href="#">Privacy Policies</a></p>'
+						}) }}
+					</div>
+
+					<div class="main__form-buttons">
+						{{ button({
+							type: 'button',
+							className: 'button_empty',
+							children: 'Back'
+						}) }}
+
+						{{ button({
+							type: 'button',
+							className: '',
+							children: 'Check Out'
+						}) }}
+					</div>
+				</form>
 			</div>
 
-		</div>
+			<div class="main__right">
 
-		<div style="padding:20px 0;">
+				<div class="main__right-item">
+					{{ title({
+						className: 'main__right-title',
+						children: 'My basket'
+					}) }}
 
-			<h2 style="margin-bottom: 15px;">Пример с переменными:</h2>
+					<div class="main__cart-list">
+						{{ cartItem({
+							className: '',
+							name: 'Amet minim mollit non deserunt ullamco est sit',
+							price: '525',
+							src: 'jacket',
+							alt: 'Jacket'
+						}) }}
 
-			{% for item in someData %}
-				<div style="margin-bottom: 15px;">
-					<h3>{{ item.title }}</h3>
-					<p>{{ item.text }}</p>
+						{{ cartItem({
+							className: '',
+							name: 'Amet minim mollit non',
+							price: '525',
+							src: 'shoes',
+							alt: 'Shoes'
+						}) }}
+					</div>
 				</div>
-			{% endfor %}
 
-		</div>
+				<div class="main__right-item">
+					{{ title({
+						className: 'main__right-title',
+						children: 'Promo code'
+					}) }}
 
-		{# Пример с функциями #}
-		<p style="margin-bottom: 20px;">{{ addAwesome('Это текст для теста функций') }}</p>
+					<div class="main__promo-code">
+						{{ input({
+							id: 'promo-code',
+							label: '',
+							className: '',
+							type: 'text',
+							placeholder: 'Placeholder Text'
+						}) }}
 
-		{% if DEVELOP %}
-			<div class="debug" style="margin-bottom: 20px;">
-				<h2 style="margin-bottom: 15px;">Debug:</h2>
-				<p>Эта информация будет выводиться только при DEVELOP = true.</p>
+						{{ button({
+							type: 'button',
+							className: '',
+							children: 'Apply'
+						}) }}
+					</div>
+				</div>
+
+				<div class="main__right-item">
+					<div class="main__cart-total">
+						<p>Subtotal</p>
+						<p>$1 050</p>
+						<p>Tax</p>
+						<p>$100</p>
+						<p>Shipping</p>
+						<p>$150</p>
+						<p>Total</p>
+						<p>$1 300</p>
+					</div>
+				</div>
 			</div>
-		{% endif %}
-
-		<div style="padding:20px 0;">
-
-			<h2 style="margin-bottom: 15px;">Пример использования SVG-спрайта</h2>
-
-			{{ icon({
-				iconName: 'chat',
-				className: 'icon',
-				attributes: 'viewBox="0 0 20 20" style="width: 40px; height: 40px; fill: #212121;"'
-			}) }}
 
 		</div>
-
 	</div>
 {% endblock %}

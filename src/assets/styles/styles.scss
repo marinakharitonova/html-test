@@ -9,9 +9,18 @@
 
 // ======= COMPONENTS =======
 @import '../../components/button/button';
+@import '../../components/steps/steps';
+@import '../../components/label/label';
+@import '../../components/title/title';
+@import '../../components/input/input';
+@import '../../components/radio/radio';
+@import '../../components/checkbox/checkbox';
+@import '../../components/counter/counter';
+@import '../../components/cartItem/cart-item';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
+@import '../../includes/card-info/card-info';
 
 // ======= PAGES =======
 @import 'pages/main';

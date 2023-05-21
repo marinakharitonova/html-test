@@ -1,7 +1,46 @@
-{% from "../../components/menu/menu.nunj" import menu %}
+{% from "../../components/label/label.nunj" import label %}
 
 <div class="header">
-	<div class="container">
-		{{ menu() }}
+	<div class="container header__content">
+		<a href="#">
+			{{ icon({
+				iconName: 'logo',
+				className: 'icon',
+				attr: 'viewBox="0 0 89 32" style="width: 89px; height: 32px;"'
+			}) }}
+		</a>
+
+		<div class="header__left">
+			<a href="#">
+				{{ icon({
+					iconName: 'search',
+					className: 'icon',
+					attr: 'viewBox="0 0 24 24" style="width: 24px; height: 24px;"'
+				}) }}
+			</a>
+
+			<div class="header__chart">
+				<a href="#">
+					{{ icon({
+						iconName: 'cart',
+						className: 'icon',
+						attr: 'viewBox="0 0 24 21" style="width: 24px; height: 21px;"'
+					}) }}
+				</a>
+				{{ label({
+					className: 'label__small header__chart-label',
+					children: '2'
+				}) }}
+			</div>
+
+			<button class="header__burger">
+				{{ icon({
+					iconName: 'burger',
+					className: 'icon',
+					attr: 'viewBox="0 0 29 22" style="width: 29px; height: 22px;"'
+				}) }}
+			</button>
+
+		</div>
 	</div>
 </div>
