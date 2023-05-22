@@ -19,145 +19,146 @@
 
 	{% include '../includes/header/header.nunj' %}
 
+	<div class="main">
+		<div class="container">
 
-	<div class="container">
+			<div class="main__content">
 
-		<div class="main__content">
-
-			<div class="main__left">
-				{{ steps({
-					className: 'main__steps',
-					activeIndex: 3
-				}) }}
-
-				<form class="main__form">
-					{{ title({
-						className: 'main__left-title',
-						children: 'Billing Information'
+				<div class="main__left">
+					{{ steps({
+						className: 'main__steps',
+						activeIndex: 3
 					}) }}
 
-					<div class="main__form-radio">
-						{{ radio({
-							className: '',
-							id: 'credit-card',
-							name: 'payment-type',
-							value: 'credit-card',
-							label: 'Pay with Credit Card',
-							checked: true
+					<form class="main__form">
+						{{ title({
+							className: 'main__left-title',
+							children: 'Billing Information'
 						}) }}
-						{{ radio({
-							className: '',
-							id: 'pay-pal',
-							name: 'payment-type',
-							value: 'pay-pal',
-							label: icon({
-								iconName: 'paypal',
-								className: 'icon',
-								attr: 'viewBox="0 0 85 23" style="width: 85px; height: 23px;"'
-							})
+
+						<div class="main__form-radio">
+							{{ radio({
+								className: '',
+								id: 'credit-card',
+								name: 'payment-type',
+								value: 'credit-card',
+								label: 'Pay with Credit Card',
+								checked: true
+							}) }}
+							{{ radio({
+								className: '',
+								id: 'pay-pal',
+								name: 'payment-type',
+								value: 'pay-pal',
+								label: icon({
+									iconName: 'paypal',
+									className: 'icon',
+									attr: 'viewBox="0 0 85 23" style="width: 85px; height: 23px;"'
+								})
+							}) }}
+						</div>
+
+						{% include '../includes/card-info/card-info.nunj' %}
+
+						<div class="main__form-checkboxes">
+							{{ checkbox({
+								className: '',
+								id: 'save-card',
+								name: '',
+								value: '',
+								label: '<p>Save information of this credit card</p>',
+								checked: true
+							}) }}
+							{{ checkbox({
+								className: '',
+								id: 'privacy-policy',
+								name: '',
+								value: '',
+								label: '<p>I accept the&nbsp;<a href="#">terms and&nbsp;comditions</a> and&nbsp;the&nbsp;<a href="#">Privacy Policies</a></p>'
+							}) }}
+						</div>
+
+						<div class="main__form-buttons">
+							{{ button({
+								type: 'button',
+								className: 'button_empty',
+								children: 'Back'
+							}) }}
+
+							{{ button({
+								type: 'button',
+								className: '',
+								children: 'Check Out'
+							}) }}
+						</div>
+					</form>
+				</div>
+
+				<div class="main__right">
+
+					<div class="main__right-item">
+						{{ title({
+							className: 'main__right-title',
+							children: 'My basket'
 						}) }}
+
+						<div class="main__cart-list">
+							{{ cartItem({
+								className: '',
+								name: 'Amet minim mollit non deserunt ullamco est sit',
+								price: '525',
+								src: 'jacket',
+								alt: 'Jacket'
+							}) }}
+
+							{{ cartItem({
+								className: '',
+								name: 'Amet minim mollit non',
+								price: '525',
+								src: 'shoes',
+								alt: 'Shoes'
+							}) }}
+						</div>
 					</div>
 
-					{% include '../includes/card-info/card-info.nunj' %}
+					<div class="main__right-item">
+						{{ title({
+							className: 'main__right-title',
+							children: 'Promo code'
+						}) }}
 
-					<div class="main__form-checkboxes">
-						{{ checkbox({
-							className: '',
-							id: 'save-card',
-							name: '',
-							value: '',
-							label: '<p>Save information of this credit card</p>',
-							checked: true
-						}) }}
-						{{ checkbox({
-							className: '',
-							id: 'privacy-policy',
-							name: '',
-							value: '',
-							label: '<p>I accept the&nbsp;<a href="#">terms and&nbsp;comditions</a> and&nbsp;the&nbsp;<a href="#">Privacy Policies</a></p>'
-						}) }}
+						<div class="main__promo-code">
+							{{ input({
+								id: 'promo-code',
+								label: '',
+								className: '',
+								type: 'text',
+								placeholder: 'Placeholder Text'
+							}) }}
+
+							{{ button({
+								type: 'button',
+								className: '',
+								children: 'Apply'
+							}) }}
+						</div>
 					</div>
 
-					<div class="main__form-buttons">
-						{{ button({
-							type: 'button',
-							className: 'button_empty',
-							children: 'Back'
-						}) }}
-
-						{{ button({
-							type: 'button',
-							className: '',
-							children: 'Check Out'
-						}) }}
+					<div class="main__right-item">
+						<div class="main__cart-total">
+							<p>Subtotal</p>
+							<p>$<span id="subtotal">1 050</span></p>
+							<p>Tax</p>
+							<p>$100</p>
+							<p>Shipping</p>
+							<p>$150</p>
+							<p>Total</p>
+							<p>$<span id="total">1 300</span></p>
+						</div>
 					</div>
-				</form>
+				</div>
+
 			</div>
-
-			<div class="main__right">
-
-				<div class="main__right-item">
-					{{ title({
-						className: 'main__right-title',
-						children: 'My basket'
-					}) }}
-
-					<div class="main__cart-list">
-						{{ cartItem({
-							className: '',
-							name: 'Amet minim mollit non deserunt ullamco est sit',
-							price: '525',
-							src: 'jacket',
-							alt: 'Jacket'
-						}) }}
-
-						{{ cartItem({
-							className: '',
-							name: 'Amet minim mollit non',
-							price: '525',
-							src: 'shoes',
-							alt: 'Shoes'
-						}) }}
-					</div>
-				</div>
-
-				<div class="main__right-item">
-					{{ title({
-						className: 'main__right-title',
-						children: 'Promo code'
-					}) }}
-
-					<div class="main__promo-code">
-						{{ input({
-							id: 'promo-code',
-							label: '',
-							className: '',
-							type: 'text',
-							placeholder: 'Placeholder Text'
-						}) }}
-
-						{{ button({
-							type: 'button',
-							className: '',
-							children: 'Apply'
-						}) }}
-					</div>
-				</div>
-
-				<div class="main__right-item">
-					<div class="main__cart-total">
-						<p>Subtotal</p>
-						<p>$<span id="subtotal">1 050</span></p>
-						<p>Tax</p>
-						<p>$100</p>
-						<p>Shipping</p>
-						<p>$150</p>
-						<p>Total</p>
-						<p>$<span id="total">1 300</span></p>
-					</div>
-				</div>
-			</div>
-
 		</div>
 	</div>
 {% endblock %}

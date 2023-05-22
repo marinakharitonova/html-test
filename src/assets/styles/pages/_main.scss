@@ -1,4 +1,6 @@
 .main {
+	overflow-x: hidden;
+
 	&__content {
 		min-height: calc(100vh - 82px);
 		box-sizing: border-box;
@@ -11,7 +13,6 @@
 
 		@media (max-width: $breakpoint-md) {
 			grid-template-columns: 1fr;
-			padding-bottom: 190px;
 		}
 	}
 
@@ -32,6 +33,10 @@
 	&__left {
 		padding-top: 60px;
 		border-right: 1px solid $secondary-color;
+
+		@media (max-width: $breakpoint-lg) {
+			padding-bottom: 190px;
+		}
 
 		@media (max-width: $breakpoint-md) {
 			border: none;
@@ -116,11 +121,7 @@
 	}
 
 	&__right {
-		width: calc(50vw - 420px);
-
-		@media (max-width: $breakpoint-lg) {
-			width: calc(50vw - 190px);
-		}
+		width: 100vw;
 
 		@media (max-width: $breakpoint-md) {
 			display: none;
